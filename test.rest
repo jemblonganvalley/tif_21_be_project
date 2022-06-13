@@ -1,0 +1,45 @@
+###
+POST http://localhost:9000/api/user/create
+Content-Type: application/json
+
+{
+    "email" : "fadliselaz@gmail.com",
+    "password" : "123",
+    "avatar" : "https://images.pexels.com/photos/12199830/pexels-photo-12199830.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+}
+
+###
+POST http://localhost:9000/api/user/login
+Content-Type: application/json
+
+{
+    "email" : "fadliselaz@gmail.com",
+    "password" : "123"
+}
+
+###
+PUT http://localhost:9000/api/user/update
+Content-Type: application/json
+
+{
+    "id" : 1,
+    "email" : "evalia@gmail.com",
+    "password" : "321"
+}
+
+###
+POST http://localhost:9000/api/user/read?page=1&limit=10
+Content-Type: application/json
+
+{
+    "filter" : {
+        "id" : 1
+    },
+    "select" : {
+        "id" : true,
+        "email" : true,
+        "avatar" : true,
+        "createdAt" : true,
+        "updatedAt": true
+    }
+}
